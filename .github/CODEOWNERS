@@ -9,3 +9,14 @@
 docs/frozen/**             @tychoish
 /src/*/torch.md            @tychoish
 /notes/torch.md            @tychoish
+# extra probes
+/lead/slash.md             @tychoish
+/qm/file?.md               @tychoish
+/br/q[0-9].md              @tychoish
+/cb/{a,b}.md               @tychoish
+!/neg/x.md                 @tychoish
+/mid/**/leaf.md            @tychoish
+/dirslash/                 @tychoish
+*.balx                     @tychoish
+/case/upper.md             @tychoish
+/menu/bal**/deep/**        @tychoish
