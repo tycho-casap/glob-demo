@@ -52,3 +52,33 @@ deep).
 
 Not covered: forms the ruleset documentation does not describe (leading `/`, `?`, `[]`)
 and whether the repository's own validator accepts what GitHub accepts.
+
+## Extra forms (PRs #21 to #38, base `tycho/extra-codeowners`)
+
+Their base branch carries the extra CODEOWNERS lines (PR #20, unmerged) and is added
+to the extra ruleset's ref conditions (`ruleset-extra.json`). All ten ruleset patterns
+were accepted at creation, so only the PRs show what they match.
+
+| PR | Pattern (ruleset / CODEOWNERS) | File added | CODEOWNERS | Ruleset |
+|----|--------------------------------|------------|------------|---------|
+| #21 | `lead/slash.md` with a leading `/` | `lead/slash.md` | yes | blocks: a leading `/` is accepted and matches |
+| #22 | `qm/file?.md` | `qm/file1.md` | yes | blocks |
+| #23 | same | `qm/file12.md` | no | no: `?` is exactly one character |
+| #24 | `br/q[0-9].md` | `br/q5.md` | **no**: GitHub flags it "Invalid pattern" | **blocks** |
+| #25 | same | `br/qa.md` | no | no |
+| #26 | `cb/{a,b}.md` | `cb/a.md` | no | no: no brace expansion |
+| #27 | same | `cb/{a,b}.md` (literal name) | yes | blocks: braces are literal |
+| #28 | `!neg/x.md` | `neg/x.md` | no | no: no negation, `!` is literal |
+| #29 | `mid/**/leaf.md` | `mid/leaf.md` | yes | blocks: `/**/` matches zero dirs |
+| #30 | same | `mid/x/leaf.md` | yes | blocks |
+| #31 | same | `mid/x/y/leaf.md` | yes | blocks |
+| #32 | `dirslash/` | `dirslash/f.md` | yes | blocks |
+| #33 | same | `dirslash/sub/g.md` | yes | blocks |
+| #34 | `*.balx` | `root.balx` | yes | blocks |
+| #35 | same | `a/b/nested.balx` | yes | blocks: a slash-free pattern matches at any depth |
+| #36 | `case/upper.md` | `Case/upper.md` | no | no: case sensitive |
+| #37 | same | `case/upper.md` | yes | blocks |
+| #38 | `menu/bal**/deep/**` | `menu/bal-special/deep/more.md` | yes | blocks |
+
+The only disagreement between CODEOWNERS and the ruleset is `[0-9]`: the ruleset
+honors it, CODEOWNERS rejects it. Everything else matches.
