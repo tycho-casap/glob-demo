@@ -1,0 +1,11 @@
+# One owner (@tychoish). Probes for glob ambiguity; see README.md.
+/desserts/baked-alaska/**  @tychoish
+/**/*_bal.go               @tychoish
+**/*_bal_test.go           @tychoish
+/**/*_bal.gen.go           @tychoish
+/scripts/bal*/**           @tychoish
+/menu/bal**                @tychoish
+/recipes/*.md              @tychoish
+docs/frozen/**             @tychoish
+/src/*/torch.md            @tychoish
+/notes/torch.md            @tychoish
