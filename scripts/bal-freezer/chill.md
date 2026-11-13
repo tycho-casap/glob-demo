@@ -14,3 +14,5 @@ Sources (found via web search; amounts vary by recipe):
 - https://www.spendwithpennies.com/easy-baked-alaska/
 - https://preppykitchen.com/baked-alaska
 - https://therecipecritic.com/baked-alaska/
+
+Probe edit for `scripts/bal-freezer/chill.md`.
