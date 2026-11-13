@@ -1,0 +1,5 @@
+{"name":"probe-required-reviewers","target":"branch","enforcement":"active","bypass_actors":[],
+ "conditions":{"ref_name":{"include":["refs/heads/main"],"exclude":[]}},
+ "rules":[{"type":"pull_request","parameters":{"required_approving_review_count":0,"dismiss_stale_reviews_on_push":false,"require_code_owner_review":false,"require_last_push_approval":false,"required_review_thread_resolution":false,
+  "required_reviewers":[{"minimum_approvals":1,"reviewer":{"id":20687210,"type":"Team"},
+   "file_patterns":["desserts/baked-alaska/**","**/*_bal.go","**/*_bal_test.go","**/*_bal.gen.go","scripts/bal*/**","menu/bal**","recipes/*.md","docs/frozen/**","src/*/torch.md","notes/torch.md"]}]}}]}
